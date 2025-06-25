@@ -101,15 +101,6 @@ jobs:
             asy/Napkin-*.asy
             asy/Napkin-*.pdf
 
-      - name: Compile flowchart
-        run: |
-          ./export-flowchart.sh
-      - name: Extract table of contents
-        run: |
-          python3 print-toc.py --parts --chapters --numbers > toc.txt
-      - name: Extract per-part PDF's
-        run: |
-          python3 print-toc.py --qpdf | bash
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
